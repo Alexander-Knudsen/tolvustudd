@@ -1,0 +1,454 @@
+/* ======================================================
+   Base Styling
+   ====================================================== */
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base font and color scheme */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #002244; /* Deep Blue */
+    background-color: #f8f8f8; /* Off White */
+    line-height: 1.6;
+  }
+  
+  /* ======================================================
+     Header & Navigation
+     ====================================================== */
+  
+  header {
+    background-color: #002244; /* Deep Blue */
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    position: relative; /* For positioning submenus */
+  }
+  
+  nav li {
+    margin: 0 15px;
+    position: relative; /* For positioning submenus */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #f8f8f8; /* Off White */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 8px 12px;
+    display: block;
+  }
+  
+  nav a.active,
+  nav a:hover {
+    color: #89abe3; /* Light Blue Accent */
+  }
+  
+  /* Submenu Styles */
+  nav .submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    background-color: #002244; /* Deep Blue */
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+  
+  nav .submenu li {
+    margin: 0;
+  }
+  
+  nav .submenu a {
+    color: #f8f8f8; /* Off White */
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+  
+  nav .submenu a:hover {
+    background-color: #89abe3; /* Light Blue Accent */
+    color: #002244; /* Deep Blue Text */
+  }
+  
+  /* Display submenu on hover */
+  nav .dropdown:hover .submenu {
+    display: block;
+  }
+  
+  /* Non-clickable submenu item */
+  nav .submenu .coming-soon {
+    color: #cccccc; /* Light Gray */
+    padding: 10px 20px;
+    cursor: default;
+  }
+  
+  nav .submenu .coming-soon:hover {
+    background-color: transparent;
+    color: #cccccc;
+  }
+  
+  /* ======================================================
+     Hero Section
+     ====================================================== */
+  
+  .hero {
+    /* Replace 'images/profile.jpg' with the path to your personal picture */
+    background: url('IMG_3377.jpeg') no-repeat center/cover;
+    height: 140vh; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f8f8f8; /* Off White */
+    position: relative;
+    padding: 20px;
+    /* Optional: Add a dark overlay for better text readability */
+    /* Uncomment the following lines if needed */
+    /*
+    background: url('images/profile.jpg') no-repeat center/cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 34, 68, 0.6);
+    */
+  }
+  
+  .hero::before {
+    /* Optional: Semi-transparent overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 34, 68, 0.4); /* Deep Blue Overlay with reduced opacity */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  }
+  
+  /* Button Styles */
+  
+  /* "My CV" Button */
+  .cv-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #89abe3; /* Light Blue Accent */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: #002244; /* Deep Blue Text */
+    text-decoration: none; /* For the link version */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-button i {
+    margin-right: 10px;
+  }
+  
+  .cv-button:hover {
+    background-color: #6b94d6; /* Darker Light Blue Accent */
+    transform: translateY(-2px);
+    color: #ffffff; /* White Text on Hover */
+  }
+  
+  /* "Explore Projects" Button */
+  .cta-button {
+    padding: 10px 20px;
+    background-color: #89abe3; /* Light Blue Accent */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    color: #002244; /* Deep Blue Text */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta-button:hover {
+    background-color: #6b94d6; /* Darker Light Blue Accent */
+    transform: translateY(-2px);
+  }
+  
+  /* ======================================================
+     Featured Projects
+     ====================================================== */
+  
+  .featured-projects {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .featured-projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #002244; /* Deep Blue */
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    gap: 20px;
+    justify-content: center; /* Centers the cards horizontally */
+  }
+  
+  .card {
+    background-color: #ffffff; /* White for contrast */
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 34, 68, 0.1); /* Deep Blue Shadow */
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 34, 68, 0.2);
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+    color: #002244; /* Deep Blue */
+  }
+  
+  .card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333333; /* Darker text for readability */
+  }
+  
+  .read-more {
+    margin-top: 15px;
+    text-decoration: none;
+    color: #89abe3; /* Light Blue Accent */
+    font-weight: bold;
+    align-self: flex-start; /* Align link to the start */
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #6b94d6; /* Darker Light Blue Accent */
+  }
+  
+  /* ======================================================
+     About Page
+     ====================================================== */
+  
+  /* About Page Sections */
+  .about-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 34, 68, 0.1); /* Deep Blue Shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 34, 68, 0.15);
+  }
+  
+  .about-section h2 {
+    color: #002244; /* Deep Blue */
+    margin-bottom: 25px;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #89abe3; /* Light Blue Accent */
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .about-content,
+  .course-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+  }
+  
+  .about-text p,
+  .course-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333333; /* Dark Gray for readability */
+    margin-bottom: 20px;
+  }
+  
+  /* Optional: Profile Picture Styling */
+  .profile-pic {
+    flex: 1;
+    max-width: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 34, 68, 0.1);
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* CV Button Styling */
+  .cv-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: #89abe3; /* Light Blue Accent */
+    color: #002244; /* Deep Blue Text */
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cv-button i {
+    margin-right: 10px;
+  }
+  
+  .cv-button:hover {
+    background-color: #6b94d6; /* Darker Light Blue Accent */
+    color: #ffffff; /* White Text on Hover */
+    transform: translateY(-3px);
+  }
+  
+  /* ======================================================
+     Footer
+     ====================================================== */
+  
+  footer {
+    background-color: #002244; /* Deep Blue */
+    color: #f8f8f8; /* Off White */
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* ======================================================
+     Responsive Design
+     ====================================================== */
+  
+  /* Responsive Adjustments for About Page */
+  @media (max-width: 768px) {
+    .about-content,
+    .course-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .profile-pic {
+      max-width: 200px;
+    }
+  
+    .cv-button {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .hero {
+      height: 60vh;
+    }
+  
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .featured-projects h2 {
+      font-size: 2rem;
+    }
+  
+    .card {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .about-section h2 {
+      font-size: 2rem;
+      border-bottom: 2px solid #89abe3;
+    }
+  
+    .about-text p,
+    .course-content p {
+      font-size: 1rem;
+    }
+  
+    .cv-button {
+      padding: 10px 20px;
+    }
+  }
+  
+  /* ======================================================
+     Additional Elements (if needed)
+     ====================================================== */
+  
+  /* Example: Smooth Scroll for Navigation Links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Example: Button Focus Styles for Accessibility */
+  button:focus,
+  a:focus {
+    outline: 2px dashed #89abe3;
+    outline-offset: 4px;
+  }
+  

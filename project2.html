@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My University Project - Project 1</title>
-  <!-- Link to your CSS file -->
+  <title>Project 2 - Press-Fit Design & Vinyl Cutting</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
   <header>
     <nav>
       <ul>
@@ -27,19 +25,206 @@
     </nav>
   </header>
 
-  <!-- Main Content Section -->
   <main>
     <section class="project-detail">
-      <h1>Project 2: [Coming soon...]</h1>
+      <h1>Project 2: Press-Fit Design & Vinyl Cutting</h1>
+
+      <h2>📌 Overview</h2>
+      <p>
+        This project focused on designing and fabricating a **press-fit assembly** using **Fusion 360, Inkscape, and a laser cutter**.
+        I also used a **vinyl cutter** to create a separate design. The goal was to learn **parametric modeling, kerf compensation, and laser cutting techniques**.
+      </p>
+
+      <h2>📁 Project Files</h2>
+      <ul>
+        <li><a href="verkefni_2_tolvustudd_finger v3.dxf" download>Fusion finger design DXF File</a></li>
+        <li><a href="verkefni_2_tolvustudd_slot.dxf" download>Fusion slot design DXF File</a></li>
+        <li><a href="tolvustudd_v2.1.svg">Inkscape SVG of Fusion design</a></li>
+        <li><a href="dc_logo+.svg">Vinyl Design SVG</a></li>
+      </ul>
+
+      <h2>📌 Parametric Design</h2>
+<p>
+  This project was designed with <strong>full parametric control</strong> in Fusion 360, allowing for quick adjustments to key values such as <strong>material thickness, slot dimensions, and joint types</strong>. This approach ensured that the design could be <strong>easily modified without redrawing anything</strong>.
+</p>
+
+<p>
+  Below are the main parameters that controlled the model:
+</p>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><strong>Thickness</strong></td>
+    <td>3 mm</td>
+    <td>Material thickness used for cutting.</td>
+  </tr>
+  <tr>
+    <td><strong>Width</strong></td>
+    <td>150 mm</td>
+    <td>Total width of the base shape.</td>
+  </tr>
+  <tr>
+    <td><strong>Height</strong></td>
+    <td>100 mm</td>
+    <td>Total height of the base shape.</td>
+  </tr>
+  <tr>
+    <td><strong>FilletRadius_slot</strong></td>
+    <td>Fillet - 0.1 mm</td>
+    <td>Rounded corners for smoother slot insertion.</td>
+  </tr>
+  <tr>
+    <td><strong>SlotWidth</strong></td>
+    <td>Thickness - 0.1 mm (2.90 mm)</td>
+    <td>Width of the slots for press-fit connection, adjusted for kerf.</td>
+  </tr>
+  <tr>
+    <td><strong>SlotLength</strong></td>
+    <td>25 mm</td>
+    <td>Depth of each slot for secure fit.</td>
+  </tr>
+  <tr>
+    <td><strong>T_Width_Slot</strong></td>
+    <td>T_Width - 0.1 mm (4.90 mm)</td>
+    <td>Width of the T-slot, adjusted for kerf.</td>
+  </tr>
+  <tr>
+    <td><strong>T_Height_Slot</strong></td>
+    <td>T_Height - 0.1 mm (2.90 mm)</td>
+    <td>Height of the T-slot, adjusted for kerf.</td>
+  </tr>
+  <tr>
+    <td><strong>T_Height</strong></td>
+    <td>3 mm</td>
+    <td>Full height of the T-tab.</td>
+  </tr>
+  <tr>
+    <td><strong>T_Width</strong></td>
+    <td>5 mm</td>
+    <td>Full width of the T-tab.</td>
+  </tr>
+  <tr>
+    <td><strong>Fillet</strong></td>
+    <td>1 mm</td>
+    <td>General fillet applied to edges.</td>
+  </tr>
+</table>
+
+<p>
+  The use of <strong>parametric values</strong> allowed for <strong>easy adjustments</strong> if any fitment issues arose during testing. For example, the slot width was reduced slightly (<code>Thickness - 0.1 mm</code>) to ensure a tight press-fit after accounting for <strong>kerf from the laser cutter</strong>. The T-joints were also parametrically controlled so that they could be modified for better interlocking strength.
+</p>
+
+<img src="parameters_ss.png" alt="Fusion 360 Parameter Table" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+
+      <li><a href="project2.html" download>Parameters used in Fusion </a></li>
+
+      <h2>🛠️ Laser Cutting & Testing</h2>
+<p>
+  Once the design was finalized in <strong>Fusion 360</strong>, I exported it as <strong>DXF and SVG</strong> and prepared it for <strong>laser cutting</strong>.
+  Since precise <strong>press-fit connections</strong> require tight tolerances, I made sure to apply <strong>kerf compensation</strong> in Inkscape to avoid loose joints.
+</p>
+
+<p>
+  During the cutting process, I closely monitored the <strong>laser settings</strong>, ensuring that the <strong>power (100%) and speed (30%) were optimized</strong> for clean edges.
+  I ran a <strong>small test cut first</strong>, measuring the slot widths with calipers to confirm that the material removal (kerf) was consistent
+  with my calculations. The first test piece was slightly loose, so I adjusted the <strong>SlotWidth parameter in Fusion 360</strong> before cutting the final version.
+</p>
+
+<p>
+  The laser cutter performed well, but I noticed that <strong>heat buildup caused minor edge darkening</strong>. To minimize this, I adjusted the
+  cutting speed slightly and ensured that the <strong>air assist was functioning properly</strong>. Once the final cut was complete, I manually
+  checked each slot by inserting the tabs and confirming that the <strong>press-fit held securely without excessive force</strong>.
+</p>
+
+
+
+
+      <h2>⚙️ Assembly & Fit Testing</h2>
+<p>
+  For this project, I wanted to keep the design <strong>simple and functional</strong> while still having a bit of an <strong>aesthetic touch</strong>.
+  The goal was to create something that would be <strong>easy to assemble</strong> but also look good as a finished piece because sometimes less is more.
+</p>
+
+<p>
+  The design included <strong>three different press-fit joint types</strong>:
+</p>
+<ul>
+  <li><strong>Basic Slot:</strong> Standard press-fit connection.</li>
+  <li><strong>T-Slot:</strong> Provides extra locking to prevent movement.</li>
+  <li><strong>Rounded Slot:</strong> Allows easier insertion.</li>
+</ul>
+
+<p>
+  After cutting, I tested how well the pieces fit together. The first version was slightly loose, so I adjusted the slot width by <strong>-0.05mm</strong> to get a tighter fit.
+  The final assembly came out well, and I ended up <strong>mounting the piece on my wall</strong> as part of my setup.
+</p>
+
+<p>
+  Originally, I planned to use my <strong>dad’s pen plotter</strong> to add some artwork to the design, but the plotter wasn’t working.
+  I’ll revisit this later to add some decorative elements to the piece.
+</p>
+
+<img src="IMG_3418.jpeg" alt="Final Assembly of Press-Fit Parts on My Wall" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+
+
+      <h2>🎨 Vinyl Cutter Project</h2>
+<p>
+  In addition to laser cutting, I also used a <strong>vinyl cutter</strong> to create a separate design in Inkscape.
+  The design was converted into an <strong>SVG</strong>, then sent to the vinyl cutter for processing.
+</p>
+
+<p>
+  For the design, I wanted something <strong>recognizable and nostalgic</strong>, so I thought of the <strong>DC Shoes logo</strong>.
+  Pretty much <strong>everyone had some clothing from DC Shoes as a kid</strong>, so it felt like a fun and familiar choice for the vinyl cut.
+</p>
+
+<ul>
+  <li>Designed in <strong>Inkscape</strong></li>
+  <li>Cut with a <strong>vinyl cutter</strong></li>
+  <li>Material: <strong>Adhesive vinyl sheet</strong></li>
+</ul>
+
+<img src="IMG_3419.jpeg" alt="Final Vinyl Cut Design" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+
+      <h2>⚠️ Challenges & Solutions</h2>
+      <table>
+        <tr>
+          <th>Challenge</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>Slots were too loose after the first cut</td>
+          <td>Adjusted **SlotWidth** in Fusion 360 and used "Inset" in Inkscape to compensate for kerf.</td>
+        </tr>
+        <tr>
+          <td>T-Slot was too tight for easy assembly</td>
+          <td>Reduced **TabWidth** slightly to allow a better fit.</td>
+        </tr>
+        <tr>
+          <td>Using Inkscape, laser cutter, and vinyl cutter for the first time</td>
+          <td>Read about how to use, ask chatGPT and learn by doing</td>
+        </tr>
+      </table>
+
+      <h2>💡 Lessons Learned</h2>
+      <ul>
+        <li>**Kerf compensation is critical**—even small adjustments affect fit.</li>
+        <li>**Parametric modeling saves time**—adjusting a few values improved the design without starting over.</li>
+        <li>**Test cuts are essential**—I had to iterate before getting a perfect fit.</li>
+      </ul>
+
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 My University Project</p>
   </footer>
 
-  <!-- Link to your JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>

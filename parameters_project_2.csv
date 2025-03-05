@@ -1,0 +1,12 @@
+Name,Unit,Expression,Value,Comments,Favorite
+Thickness,mm,3 mm,3.00,	Material thickness,false
+Width,mm,150 mm,150.00,Width of the shape,false
+Height,mm,100 mm,100.00,	Height of the shape,false
+FilletRadius_slot,mm,Fillet - 0.1 mm,0.90,Fillet size,false
+Slotwidth,mm,Thickness - 0.1 mm,2.90,Slot width for press-fit,false
+SlotLength,mm,25 mm,25.00,	Slot length,false
+T_width_slot,mm,T_width - 0.1 mm,4.90,,false
+T_height_slot,mm,T_height - 0.1 mm,2.90,,false
+T_height,mm,3 mm,3.00,,false
+T_width,mm,5 mm,5.00,,false
+Fillet,mm,1 mm,1.00,,false

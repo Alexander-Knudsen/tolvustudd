@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My University Project - Project 1</title>
-  <!-- Link to your CSS file -->
+  <title>Project 3 - 3D Printing & Scanning</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Header / Navigation -->
   <header>
     <nav>
       <ul>
@@ -27,19 +25,109 @@
     </nav>
   </header>
 
-  <!-- Main Content Section -->
   <main>
     <section class="project-detail">
-      <h1>Project 3: [Coming soon...]</h1>
+      <h1>Project 3: 3D Printing & Scanning</h1>
+
+      <h2>📌 Overview</h2>
+      <p>
+        For this project, I wanted to create something meaningful, so I decided to turn the <strong>Botanic logo</strong> 
+        (from my AI chatbot project) into a 3D printed sculpture. The goal was to produce a layered version of the logo, 
+        making it impossible to manufacture using subtractive methods like laser cutting or CNC machining.  
+      </p>
+      <p>
+        The design was made in Fusion 360, then processed in PrusaSlicer, and printed on a Prusa i3 MKS. 
+        After printing, I also used Polycam to scan a <strong>Collab energy drink</strong>, since I basically drink those every day.
+      </p>
+      
+      <h2>🏗️ Fusion 360 Design Process</h2>
+      <p>
+        I built the model in Fusion 360 using a layered approach. Since the original logo is a 2D drawing, 
+        I had to break it down into separate components for the head, eyes, leaves, stem, and pot.  
+      </p>
+      <ul>
+        <li>Started with a sketch of the logo, then converted it into multiple 3D components.</li>
+        <li>Used parametric design to allow easy adjustments to thickness and size.</li>
+        <li>Mirrored elements like leaves for perfect symmetry.</li>
+        <li>Filleted some edges for a smoother, more polished look.</li>
+      </ul>
+      <p>
+        The most challenging part was getting the proportions right while making sure all parts 
+        were thick enough for 3D printing. The final design was exported as an STL file for slicing.  
+      </p>
+      <img src="botanic_fusion.png" alt="Fusion 360 3D Model" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+      <p><a href="assembly botanic.stl" download>Download Fusion 360 Assembly File</a></p>
+
+      <h2>🖨️ 3D Printing with Prusa i3 MKS</h2>
+      <p>
+        Once the design was ready, I imported the STL file into PrusaSlicer and set up the print.
+        This was my first time using a slicer, so it took some time to figure out settings.  
+      </p>
+      <p>
+        The print time was 2 hours 57 minutes, which was longer than I expected for such a small object, 
+        but I had no real reference point for print times.
+      </p>
+      <ul>
+        <li><strong>Supports:</strong> Added, but probably overkill</li>
+      </ul>
+      <img src="prusa_ss.png" alt="Prusa Slicer" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+
+      <h2>📸 3D Print Result</h2>
+      <p>
+        The print finished successfully. The supports ended up being kind of overkill, but overall, 
+        the details turned out very well! Below are images of the print before and after removing supports.
+      </p>
+      <img src="IMG_3426.jpeg" alt="3D Print Before Supports Removed" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+      <img src="IMG_3427.jpeg" alt="3D Print After Supports Removed" style="max-width: 100%; height: auto; display: block; margin: auto;" />
+
+      <h2>📡 3D Scanning with Polycam</h2>
+      <p>
+        For the scanning part of the project, I used Polycam on my phone to scan a Collab energy drink 
+        (since I drink those every day). The scan came out decent, but like most mobile-based scans, 
+        it had some imperfections in the textures and surface smoothness.
+      </p>
+      <p><a href="3_13_2025.zip" download>Download Scanned Collab Energy Drink (ZIP)</a></p>
+
+      <h2>⚠️ Challenges & Solutions</h2>
+      <table>
+        <tr>
+          <th>Challenge</th>
+          <th>Solution</th>
+        </tr>
+        <tr>
+          <td>Never used Fusion 360 for organic models</td>
+          <td>Used symmetry & parametric design to simplify adjustments.</td>
+        </tr>
+        <tr>
+          <td>First time using PrusaSlicer</td>
+          <td>Watched a few tutorials and adjusted settings based on trial & error.</td>
+        </tr>
+        <tr>
+          <td>Print time longer than expected</td>
+          <td>Checked print preview in slicer to understand time estimates.</td>
+        </tr>
+        <tr>
+          <td>3D scanning had texture issues</td>
+          <td>Would try a structured-light scanner for better accuracy next time.</td>
+        </tr>
+      </table>
+
+      <h2>💡 Lessons Learned</h2>
+      <ul>
+        <li>3D printing takes longer than expected, even for small objects.</li>
+        <li>Supports are not always necessary—better to optimize the design instead.</li>
+        <li>3D scanning with a phone is good for basic captures but lacks fine detail.</li>
+        <li>Fusion 360 is powerful for designing layered objects, but takes time to master.</li>
+        <li>Overall this was a super fun project and totally got my attention and interest into how useful 3D printing is.</li>
+      </ul>
+
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 My University Project</p>
   </footer>
 
-  <!-- Link to your JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>

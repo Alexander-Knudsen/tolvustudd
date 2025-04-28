@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Project – Mixie Cocktail Pourer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ────── NAVIGATION ────── -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="projects.html" class="active">Projects</a>
+          <ul class="submenu">
+            <li><a href="project1.html">Project 1</a></li>
+            <li><a href="project2.html">Project 2</a></li>
+            <li><a href="project3.html">Project 3</a></li>
+            <li><a href="finalproject.html">Final Project</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ────── CONTENT ────── -->
+  <main>
+    <section class="project-detail">
+      <h1>Final Project – Mixie Cocktail Pourer<br><small>(Group project – Shop Bot CNC build)</small></h1>
+
+      <!-- Overview -->
+      <h2>📌 Overview</h2>
+      <p>
+        As our capstone for <strong>VÉL608G – Tölvustudd framleiðsla</strong> we built a
+        <em>Mixie</em> cocktail pourer: a bar shelf that auto-dispenses spirits via a
+        stepper-driven slide mechanism.  
+        The wooden frame was milled from <strong>18 mm spruce plywood</strong> on the
+        <strong>Shop Bot CNC</strong>; electronics and firmware are handled in another course,
+        but every subtractive-manufacturing step is documented here.
+      </p>
+
+      <!-- Design & CAD -->
+      <h2>🏗️ Fusion 360 Design Process</h2>
+      <p>
+        We modelled the frame in Fusion 360 with a layered, parametric approach:
+      </p>
+      <ul>
+        <li>Sketched the logo/box, then converted each piece to a solid body.</li>
+        <li>All dado slots driven by a single <code>MatThk = 18 mm</code> parameter.</li>
+        <li>Mirrored leaves and filleted edges for cleaner looks.</li>
+      </ul>
+      <p>
+        Biggest headache: we first drew everything for 6 mm stock, discovered our plywood
+        was 18 mm, and had to re-parameterise the entire model.
+      </p>
+      <img src="mixie_cad.jpg" alt="Fusion 360 CAM layout"
+           style="max-width:100%;display:block;margin:auto;" />
+
+      <!-- CAM -->
+      <h2>🔧 CAM & Toolpaths</h2>
+      <table>
+        <tr><th colspan="2">Shop Bot setup</th></tr>
+        <tr><td>Tool</td><td>6 mm 2-flute flat end-mill</td></tr>
+        <tr><td>Spindle speed</td><td>14 000 rpm</td></tr>
+        <tr><td>Cutting feed</td><td>3 000 mm / min</td></tr>
+        <tr><td>Plunge feed</td><td>333 mm / min</td></tr>
+        <tr><td>Toolpaths</td><td>
+          2D Contour × 1 (outer profile)<br>
+          2D Pocket × 1 (engraved MIXIE logo)
+        </td></tr>
+      </table>
+      <img src="mixie_settings.jpg" alt="Toolpath dialog"
+           style="max-width:100%;display:block;margin:auto;" />
+
+      <!-- Fabrication -->
+      <h2>🪓 Fabrication Process</h2>
+      <ol>
+        <li>Screwed 18 mm plywood to Shop Bot bed.</li>
+        <li>Ran CAM job – total machine time ≈ 18 min.</li>
+        <li>Forgot bottle holes → drilled 32 mm holes afterward.</li>
+        <li>Sanded, spray-painted neon pink + blue graffiti, then nailed & glued panels.</li>
+      </ol>
+      <img src="mixie.jpg" alt="Finished Mixie shelf"
+           style="max-width:100%;display:block;margin:auto;" />
+
+      <!-- Challenges -->
+      <h2>⚠️ Challenges & Solutions</h2>
+      <table>
+        <tr><th>Challenge</th><th>Solution</th></tr>
+        <tr><td>Wrong stock thickness</td>
+            <td>Re-parameterised model; regenerated toolpaths.</td></tr>
+        <tr><td>Missed bottle cut-outs</td>
+            <td>Hand-drilled after CNC pass.</td></tr>
+        <tr><td>Plywood tear-out</td>
+            <td>Raised spindle speed & added climb-cut finishing pass.</td></tr>
+      </table>
+
+      <!-- Results -->
+      <h2>📸 Results & Next Steps</h2>
+      <p>
+        The frame is sturdy, logo engraving is crisp, and the slide mechanism (assembled
+        in the parallel electronics course) fits perfectly. Next: wire the pumps and run
+        a live cocktail demo.
+      </p>
+
+      <!-- Lessons -->
+      <h2>💡 Lessons Learned</h2>
+      <ul>
+        <li>Always verify material thickness before CAM.</li>
+        <li>A shared Trello board kept the group on schedule.</li>
+        <li>Proper feeds & speeds improve finish and tool life.</li>
+      </ul>
+
+      <h2>Thank you</h2>
+        <p>
+        This was my final project in this course, thank you for checking out my site, I hope you liked it. HAPPY SUMMER!
+      </p>
+
+    </section>
+  </main>
+
+  <!-- ────── FOOTER ────── -->
+  <footer>
+    <p>&copy; 2025 My University Project</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
